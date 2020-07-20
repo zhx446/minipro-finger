@@ -1,0 +1,39 @@
+/**index.wxss**/
+page {
+  background-color: #F5EB91;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #E7BB24;
+  font-weight: bold;
+}
+
+.usermotto {
+  margin-top: 50rpx;
+}
+
+.enter-game {
+  width: 100rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color: #9FA1E1;
+  font-weight: 100;
+  line-height: 40rpx;
+}
+
+.hello {
+  color: #487699;
+}
