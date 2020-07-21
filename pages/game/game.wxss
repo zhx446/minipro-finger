@@ -1,62 +1,73 @@
 /* pages/game/game.wxss */
+
 page {
-  background-color: #FBE738;
+    background-color: #FBE738;
 }
+
 .container-page {
-  display: flex;
-  flex-direction: column;
-  height: 200rpx;
+    display: flex;
+    flex-direction: column;
+    height: 200rpx;
 }
+
 .victory {
-  text-align: center;
-  padding: 40rpx 0rpx 0rpx 0rpx;
+    text-align: center;
+    padding: 40rpx 0rpx 0rpx 0rpx;
 }
 
 .result {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 50rpx 50rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50rpx 50rpx;
 }
 
 .result image {
-  width: 200rpx;
-  height: 200rpx;
-  border-radius: 50%;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
 }
 
 .result text {
-  color: #FF0000;
-  font-size: 25rpx;
-  line-height: 200rpx;
+    color: #FF0000;
+    font-size: 25rpx;
+    line-height: 200rpx;
 }
 
 .chioce {
-  background-color: #F5EB91;
-  width: 90%;
-  height: 1000rpx;
-  margin: 0 auto;
-  border-radius: 20rpx;
-  display: flex;
-  flex-direction: column;
-  margin-top: 30rpx;
+    background-color: #F5EB91;
+    width: 90%;
+    height: 1000rpx;
+    margin: 0 auto;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rpx;
 }
 
 .chioce-finger {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 50rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50rpx 20rpx;
 }
+
 .chioce-finger image {
-  width: 200rpx;
-  height: 200rpx;
-  border-radius: 50%;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
 }
 
 .again {
-  background-color: #FBE738;
-  font-weight: 400;
-  border: 2rpx solid #E1D133;
-  margin-bottom: 100rpx;
+    background-color: #FBE738;
+    font-weight: 400;
+    border: 2rpx solid #E1D133;
+    margin-bottom: 100rpx;
+}
+
+.portrait {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    overflow: hidden;
 }

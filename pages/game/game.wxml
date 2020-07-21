@@ -1,17 +1,21 @@
 <!--pages/game/game.wxml-->
 <view class="container-page">
-  <view class="victory">你已经获胜了1次</view>
+  <view class="victory">你已经获胜了<text style="color:red">{{winNum}}</text>次</view>
   <view class="result">
-    <image src="../images/fabric.png"></image>
-    <text>平局平局！再来一次！</text>
-    <image src="../images/scissor.png"></image>
+    <view class="portrait">
+      <open-data type="userAvatarUrl"></open-data>
+    </view> 
+    <text>{{gameResult}}</text>
+    <image src="{{randomImg}}"></image>
   </view>
   <view class="chioce">
     <view class="victory">出手吧，小U童鞋</view>
     <view class="chioce-finger">
-      <image src="../images/fabric.png"></image>
-      <image src="../images/scissor.png"></image>
-      <image src="../images/stone.png"></image>
+      <block wx:for="{{srcs}}">
+        <view> 
+          <image src="{{item}}" ></image> 
+        </view> 
+      </block>
     </view>
     <button class="again">再来一次</button>
   </view>

@@ -9,7 +9,9 @@ Page({
         userInfo: {},
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        enter: '进入游戏'
+        enter: '进入游戏',
+        hello: 'hello!',
+        student: '小U童鞋'
     },
     //事件处理函数
     enterGame: function() {
