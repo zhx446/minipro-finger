@@ -11,13 +11,13 @@
   <view class="chioce">
     <view class="victory">出手吧，小U童鞋</view>
     <view class="chioce-finger">
-      <block wx:for="{{srcs}}">
+      <block wx:for="{{srcs}}" bindtap="chioceImg">
         <view> 
           <image src="{{item}}" ></image> 
         </view> 
       </block>
     </view>
-    <button class="again">再来一次</button>
+    <button class="again" bindtap="againGame">再来一次</button>
   </view>
 </view>
 

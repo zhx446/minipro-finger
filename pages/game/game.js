@@ -1,17 +1,22 @@
 // pages/game/game.js
+var setInterGame
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        // 设置变量
+        // 按钮是否可用
+        flag: false, //初始化不可用
         // 记录获胜次数
         winNum: 0,
         // 提示输赢
         gameResult: '你赢啦！',
+        //用户选择的图片
+        userImg: '../images/scissor.png',
         // 电脑随机图片
-        randomImg: '../images/scissor.png',
-        userImg: '',
+        randomImg: '',
         // 石头剪刀布图片数组
         srcs: [
             '../images/scissor.png',
@@ -24,12 +29,19 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        var that = this;
-        setTimeout(function() {
-            that.setData({
-                random: '../images/stone.png'
+        setInterGame = setInterval(this.data.srcs[e.currentTarget.id], 100)
+    },
+
+    chioceImg: function(e) {
+        if (this.data.flag) {
+            this.setData({
+                randomImg:
             })
-        }, 2000);
+        }
+    },
+
+    againGame: function(e) {
+
     },
 
     /**
