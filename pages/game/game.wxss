@@ -65,7 +65,7 @@ page {
     margin-bottom: 100rpx;
 }
 
-.portrait {
+.portrait image {
     width: 200rpx;
     height: 200rpx;
     border-radius: 50%;

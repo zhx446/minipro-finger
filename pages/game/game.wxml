@@ -3,7 +3,8 @@
   <view class="victory">你已经获胜了<text style="color:red">{{winNum}}</text>次</view>
   <view class="result">
     <view class="portrait">
-      <open-data type="userAvatarUrl"></open-data>
+      <!-- <open-data type="userAvatarUrl"></open-data> -->
+      <image src="{{imageUserScr}}"></image>
     </view> 
     <text>{{gameResult}}</text>
     <image src="{{randomImg}}"></image>
@@ -11,9 +12,9 @@
   <view class="chioce">
     <view class="victory">出手吧，小U童鞋</view>
     <view class="chioce-finger">
-      <block wx:for="{{srcs}}" bindtap="chioceImg">
-        <view> 
-          <image src="{{item}}" ></image> 
+      <block wx:for="{{srcs}}">
+        <view bindtap="chioceImg" id="{{index}}"> 
+          <image src="{{item}}"></image> 
         </view> 
       </block>
     </view>

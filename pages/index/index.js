@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
     // 模块引入
-var num = require('../../utils/util.js')
+var num = require('../../utils/util')
 Page({
     data: {
         motto: 'Hello World',
@@ -13,15 +13,15 @@ Page({
         hello: 'hello!',
         student: '小U童鞋'
     },
-    //事件处理函数
+    //点击进入游戏跳转页面
     enterGame: function() {
         wx.navigateTo({
                 url: '../game/game'
             })
             // 打印模块传过来的东西
-        console.log(num.number)
     },
     onLoad: function() {
+        // 赋值更改的方式
         this.setData({
             enter: '进入游戏啦'
         })
