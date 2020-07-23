@@ -12,7 +12,6 @@ Page({
         imgUser: '../images/light.jpg',
         // 游戏结果提示
         gameRes: '',
-
         // 按钮是否可点击
         btn: false,
         // 随机图片
@@ -25,6 +24,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        //获取本地缓存“已经获胜的次数”
+        var oldWinNum = wx.getStorageSync('winNum');
+        //如果有缓存，那么赋值，否则为0
+        if (oldWinNum != null && oldWinNum != '') {
+            this.data.winNum = oldWinNum;
+        }
         // 图片滚动定时器
         timer = setInterval(this.changIdx, 100)
     },
@@ -38,19 +43,39 @@ Page({
         })
     },
 
+    // 点击图片停止
     choiceImg: function(e) {
-        if (this.data.btn == false && e.target.dataset.imgid) {
+        if (this.data.btn == false) {
+            var chioceImg = e.target.dataset.imgid
+            var changeImg = this.data.randomIdx
+            let gameRes = this.data.gameRes
+            var winNum = this.data.winNum
+            let imgUser = this.data.imgUser
+            if ((chioceImg == 0 && changeImg == 2) || (chioceImg == 1 && changeImg == 0) || (chioceImg == 2 && changeImg == 1)) {
+                gameRes = '你赢了'
+                winNum = ++winNum
+            } else if (chioceImg == changeImg) {
+                gameRes = '平局'
+            } else {
+                gameRes = '输了'
+            }
             clearInterval(timer)
             this.setData({
-                imgUser: e.target.dataset.imgid
+                btn: true,
+                gameRes: gameRes,
+                winNum: winNum,
+                imgUser: this.data.randomImg[chioceImg]
             })
         }
     },
 
     againGame: function(e) {
-        if (this.data.btn == true && e.target.dataset.imgid) {
+        if (this.data.btn == true) {
             timer = setInterval(this.changIdx, 100)
-            console.log('true')
+            this.setData({
+                btn: false,
+                imgUser: '../images/light.jpg'
+            })
         }
     },
 

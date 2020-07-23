@@ -8,8 +8,8 @@
     </view>
     <view class="bottom" bindtap="choiceImg">
         <image src="../images/stone.png" data-imgid="0"></image>
-        <image src="../images/stone.png" data-imgid="1"></image>
-        <image src="../images/stone.png" data-imgid="2"></image>
+        <image src="../images/fabric.png" data-imgid="1"></image>
+        <image src="../images/scissor.png" data-imgid="2"></image>
     </view>
     <button bindtap="againGame">再来一次</button>   
 </view>
