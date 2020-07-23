@@ -1,4 +1,5 @@
 // pages/againgame/againgame.js
+// 给定时器取个名字，方便取消定时器时使用
 var timer = null
 Page({
 
@@ -14,9 +15,9 @@ Page({
         gameRes: '',
         // 按钮是否可点击
         btn: false,
-        // 随机图片
+        // 随机图片 数组的形式
         randomImg: ['../images/stone.png', '../images/fabric.png', '../images/scissor.png'],
-        // 随机图片下标
+        // 随机图片下标 定义下标变量与randomImg相关联 通过下标改变图片的显示
         randomIdx: 0
     },
 
@@ -28,26 +29,35 @@ Page({
         var oldWinNum = wx.getStorageSync('winNum');
         //如果有缓存，那么赋值，否则为0
         if (oldWinNum != null && oldWinNum != '') {
+            // 从data中找到winNum变量，并赋值
             this.data.winNum = oldWinNum;
         }
-        // 图片滚动定时器
+        // 设置图片滚动定时器  调用函数      时间
         timer = setInterval(this.changIdx, 100)
     },
-    // 改变图片下标
+    // 创建函数 改变图片下标控制显示
     changIdx: function(e) {
+        // 当下标等于2时
         if (this.data.randomIdx == 2) {
+            // 当下标等于2时 减1
             this.data.randomIdx = -1
         }
+        // 渲染到视图层
         this.setData({
+            // 进行加1
             randomIdx: this.data.randomIdx + 1
         })
     },
 
     // 点击图片停止
     choiceImg: function(e) {
+        // 当图片点击可用时
         if (this.data.btn == false) {
+            // 获取图片imgid数值
             var chioceImg = e.target.dataset.imgid
+                // 获取随机图片的下标数值
             var changeImg = this.data.randomIdx
+                // 
             let gameRes = this.data.gameRes
             var winNum = this.data.winNum
             let imgUser = this.data.imgUser

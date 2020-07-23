@@ -4,6 +4,7 @@
     <view class="top">
         <image src="{{imgUser}}"></image>
         <text>{{gameRes}}</text>
+        <!-- 绑定变量 设置下标 -->
         <image src="{{randomImg[randomIdx]}}"></image>
     </view>
     <view class="bottom" bindtap="choiceImg">
