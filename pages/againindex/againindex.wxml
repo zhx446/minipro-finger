@@ -1,0 +1,7 @@
+<!--pages/againindex/againindex.wxml-->
+<view class="container">
+    <open-data type="userAvatarUrl"></open-data>
+    <button bindtap="enterGame">进入游戏</button>
+      
+</view>
+  

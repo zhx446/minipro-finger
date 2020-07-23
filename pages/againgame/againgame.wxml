@@ -1,0 +1,16 @@
+<!--pages/againgame/againgame.wxml-->
+<view class="container-game">
+    <text>你已经获胜了<text style="color:red">{{winNum}}</text>次</text>
+    <view class="top">
+        <image src="{{imgUser}}"></image>
+        <text>{{gameRes}}</text>
+        <image src="{{randomImg[randomIdx]}}"></image>
+    </view>
+    <view class="bottom" bindtap="choiceImg">
+        <image src="../images/stone.png" data-imgid="0"></image>
+        <image src="../images/stone.png" data-imgid="1"></image>
+        <image src="../images/stone.png" data-imgid="2"></image>
+    </view>
+    <button bindtap="againGame">再来一次</button>   
+</view>
+  

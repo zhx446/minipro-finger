@@ -1,0 +1,17 @@
+/* pages/againgame/againgame.wxss */
+
+.container-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-game image {
+    width: 200rpx;
+    height: 200rpx;
+}

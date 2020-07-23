@@ -77,6 +77,19 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/againindex/againindex",
+					"pathName": "pages/againindex/againindex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/againgame/againgame",
+					"pathName": "pages/againgame/againgame",
+					"scene": null
 				}
 			]
 		}
