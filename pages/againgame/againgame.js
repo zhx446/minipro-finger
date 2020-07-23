@@ -20,12 +20,19 @@ Page({
         // 随机图片下标 定义下标变量与randomImg相关联 通过下标改变图片的显示
         randomIdx: 0
     },
+    /**
+     * 一、让图片滚动起来
+     * 二、当点击下面三张图的时候停止滚动 把选择的图片放到左边
+     * 三、
+     */
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        //获取本地缓存“已经获胜的次数”
+        // 获取缓存
+        console.log(wx.getStorageSync('H'))
+            //获取本地缓存“已经获胜的次数”
         var oldWinNum = wx.getStorageSync('winNum');
         //如果有缓存，那么赋值，否则为0
         if (oldWinNum != null && oldWinNum != '') {
@@ -39,7 +46,7 @@ Page({
     changIdx: function(e) {
         // 当下标等于2时
         if (this.data.randomIdx == 2) {
-            // 当下标等于2时 减1
+            // 当下标等于2时 设置成-1
             this.data.randomIdx = -1
         }
         // 渲染到视图层
@@ -57,20 +64,30 @@ Page({
             var chioceImg = e.target.dataset.imgid
                 // 获取随机图片的下标数值
             var changeImg = this.data.randomIdx
-                // 
+                // 游戏结果提示
             let gameRes = this.data.gameRes
+                // 获胜次数
             var winNum = this.data.winNum
+                // 用户选择的图片
             let imgUser = this.data.imgUser
+                // 使用获取图片imgid数值 和 获取随机图片的下标数值 进行判断
             if ((chioceImg == 0 && changeImg == 2) || (chioceImg == 1 && changeImg == 0) || (chioceImg == 2 && changeImg == 1)) {
+                // 提示文字
                 gameRes = '你赢了'
+                    // 获胜次数加油 ++在前面先加一再赋值  ++再后面先赋值再加一
                 winNum = ++winNum
+                    // 如果两边相等则平局
             } else if (chioceImg == changeImg) {
                 gameRes = '平局'
+                    // 剩下的结果就是输了
             } else {
                 gameRes = '输了'
             }
+            // 点击图片时 清除定时器
             clearInterval(timer)
+                // 赋值到对应的变量
             this.setData({
+                // 按钮可用
                 btn: true,
                 gameRes: gameRes,
                 winNum: winNum,
@@ -78,12 +95,16 @@ Page({
             })
         }
     },
-
+    // 点击再来一次事件
     againGame: function(e) {
+        // 当按钮可用时
         if (this.data.btn == true) {
+            // 首先开启定时器
             timer = setInterval(this.changIdx, 100)
             this.setData({
+                // 按钮不可用
                 btn: false,
+                // 变成初始化图片
                 imgUser: '../images/light.jpg'
             })
         }
@@ -114,7 +135,8 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function() {
-
+        // 设置缓存
+        wx.setStorageSync('H', '2')
     },
 
     /**
