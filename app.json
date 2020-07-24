@@ -1,9 +1,9 @@
 {
     "pages": [
-        "pages/index/index",
-        "pages/game/game",
         "pages/againindex/againindex",
-        "pages/againgame/againgame"
+        "pages/againgame/againgame",
+        "pages/index/index",
+        "pages/game/game"
     ],
     "window": {
         "backgroundTextStyle": "light",

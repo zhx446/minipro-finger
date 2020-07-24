@@ -22,8 +22,9 @@ Page({
     },
     /**
      * 一、让图片滚动起来
-     * 二、当点击下面三张图的时候停止滚动 把选择的图片放到左边
-     * 三、
+     * 1、设置定时器 setInterval()
+     * 二、当点击下面三张图的时候停止滚动 把选择的图片放到左边 再来一次不可点击
+     * 三、点击再来一次 左边图片变成原始图片 右边滚动起来 在选择出拳
      */
 
     /**
@@ -136,7 +137,20 @@ Page({
      */
     onUnload: function() {
         // 设置缓存
-        wx.setStorageSync('H', '2')
+        // wx.setStorageSync('H', '2')
+        var that = this
+        wx.setStorage({
+            data: this.data.winNum,
+            key: 'zhx',
+            success: function() {
+                that.setData({
+                    winNum: that.data.winNum
+
+                })
+                console.log(that.data.winNum)
+            }
+        })
+
     },
 
     /**
