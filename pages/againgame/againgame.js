@@ -25,6 +25,13 @@ Page({
      * 1、设置定时器 setInterval()
      * 二、当点击下面三张图的时候停止滚动 把选择的图片放到左边 再来一次不可点击
      * 三、点击再来一次 左边图片变成原始图片 右边滚动起来 在选择出拳
+     * 四、设置缓存 让获胜的次数退出能保留
+     */
+
+    /**
+     * 1、设置变量  数组可以使用 下标可以找到
+     * 2、判断是什么事件下执行 执行的事件是什么
+     * 
      */
 
     /**
@@ -47,7 +54,7 @@ Page({
     changIdx: function(e) {
         // 当下标等于2时
         if (this.data.randomIdx == 2) {
-            // 当下标等于2时 设置成-1
+            // 当下标等于2时 设置成 负一 -1
             this.data.randomIdx = -1
         }
         // 渲染到视图层
@@ -59,9 +66,10 @@ Page({
 
     // 点击图片停止
     choiceImg: function(e) {
+        // 当图片点击时要改变的东西
         // 当图片点击可用时
         if (this.data.btn == false) {
-            // 获取图片imgid数值
+            // 获取图片imgid数值  e.target.dataset 找到自定义id属性
             var chioceImg = e.target.dataset.imgid
                 // 获取随机图片的下标数值
             var changeImg = this.data.randomIdx
@@ -147,7 +155,6 @@ Page({
                     winNum: that.data.winNum
 
                 })
-                console.log(that.data.winNum)
             }
         })
 

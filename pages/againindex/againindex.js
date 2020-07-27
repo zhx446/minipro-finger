@@ -14,10 +14,15 @@ Page({
     onLoad: function(options) {
 
     },
-    enterGame: function(e) {
-        wx.navigateTo({
-            url: '../againgame/againgame'
-        })
+    // enterGame: function(e) {
+    //     // wx.navigateTo({
+    //     //     url: '../againgame/againgame'
+    //     // })
+    // },
+    getUserName: function(e) {
+        console.log(e.detail.rawData)
+            // if (e)
+
     },
 
     /**
