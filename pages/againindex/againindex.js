@@ -20,8 +20,12 @@ Page({
     //     // })
     // },
     getUserName: function(e) {
-        console.log(e.detail.rawData)
-            // if (e)
+        var nickName = JSON.parse(e.detail.rawData)
+        if (nickName) {
+            wx.navigateTo({
+                url: '../againgame/againgame?nickName='+nickName
+            })
+        }
 
     },
 

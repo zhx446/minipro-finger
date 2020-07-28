@@ -18,7 +18,8 @@ Page({
         // 随机图片 数组的形式
         randomImg: ['../images/stone.png', '../images/fabric.png', '../images/scissor.png'],
         // 随机图片下标 定义下标变量与randomImg相关联 通过下标改变图片的显示
-        randomIdx: 0
+        randomIdx: 0,
+        userid: ''
     },
     /**
      * 一、让图片滚动起来
@@ -38,15 +39,24 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        // 获取缓存
-        console.log(wx.getStorageSync('H'))
-            //获取本地缓存“已经获胜的次数”
-        var oldWinNum = wx.getStorageSync('winNum');
-        //如果有缓存，那么赋值，否则为0
-        if (oldWinNum != null && oldWinNum != '') {
-            // 从data中找到winNum变量，并赋值
-            this.data.winNum = oldWinNum;
+        // // 获取缓存
+        // console.log(wx.getStorageSync('H'))
+        //     //获取本地缓存“已经获胜的次数”
+        // var oldWinNum = wx.getStorageSync('winNum');
+        // //如果有缓存，那么赋值，否则为0
+        // if (oldWinNum != null && oldWinNum != '') {
+        //     // 从data中找到winNum变量，并赋值
+        //     this.data.winNum = oldWinNum;
+        // }
+
+        if(options.nickName) {
+            const win = wx.getStorageInfoSync(options.nickName) || 0
+            this.setData({
+                winNum:win,
+                userid:options.nickName
+            })
         }
+
         // 设置图片滚动定时器  调用函数      时间
         timer = setInterval(this.changIdx, 100)
     },
